@@ -9,9 +9,17 @@ body {
 .header {
     text-align: center;
     margin-top: 20px;
+    color: #f5f5f5;
+    font-family: 'Georgia', serif;
 }
 
-#wishlist-container {
+#countdown {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #ffd700;
+}
+
+.wishlist-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -19,7 +27,7 @@ body {
     padding: 20px;
 }
 
-/* Flip Card Style */
+/* Flip Card */
 .flip-card {
     background-color: transparent;
     width: 200px;
@@ -55,11 +63,11 @@ body {
 }
 
 .flip-card-front {
-    background: linear-gradient(145deg, #f00056, #ff4f91);
+    background: linear-gradient(145deg, #ff004c, #ff7eb8);
 }
 
 .flip-card-back {
-    background: linear-gradient(145deg, #0096c7, #00b4d8);
+    background: linear-gradient(145deg, #004c99, #0096d1);
     transform: rotateY(180deg);
 }
 
@@ -72,8 +80,30 @@ body {
     border-radius: 5px;
 }
 
-.snowflakes .snowflake {
-    animation: fall 5s linear infinite;
+/* Santa Animation */
+.santa img {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    animation: fly 8s linear infinite;
 }
 
-/* Add Animation Classes */
+@keyframes fly {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-200px); }
+}
+
+/* Snowflakes */
+.snowflakes .snowflake {
+    position: fixed;
+    top: -10%;
+    font-size: 2rem;
+    animation: fall 5s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(110vh); }
+}
