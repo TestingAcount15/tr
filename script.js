@@ -1,7 +1,7 @@
 // Countdown Timer
 const countdown = document.getElementById("countdown");
 
-// Set the target date to Christmas Eve
+// Set the target date to Christmas
 const targetDate = new Date("Dec 25, 2024 00:00:00").getTime();
 
 function updateCountdown() {
@@ -22,3 +22,26 @@ function updateCountdown() {
 
 // Update every second
 setInterval(updateCountdown, 1000);
+
+// Snowfall Effect
+const snowfallContainer = document.getElementById("snowfall");
+
+function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+
+    // Randomize initial position and animation duration
+    snowflake.style.left = Math.random() * window.innerWidth + "px";
+    snowflake.style.animationDuration = 4 + Math.random() * 6 + "s"; // Between 4s and 10s
+    snowflake.style.animationDelay = Math.random() * 5 + "s"; // Up to 5s delay
+
+    snowfallContainer.appendChild(snowflake);
+
+    // Remove snowflake after animation ends
+    setTimeout(() => {
+        snowflake.remove();
+    }, 10000); // Matches maximum animation duration
+}
+
+// Generate snowflakes at intervals
+setInterval(createSnowflake, 200); // New snowflake every 200ms
